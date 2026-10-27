@@ -1,0 +1,10 @@
+{
+  "name": "reposition-tools",
+  "private": true,
+  "description": "The one dependency of measure.mjs and verify-hero.mjs, locked so every install gets the same files.",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "playwright-core": "1.48.2"
+  }
+}

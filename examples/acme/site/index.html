@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acme - Release checks for mobile teams.</title>
+<meta name="description" content="Release checks for mobile teams. Know a build is safe before your users do.">
+<style>
+  body { margin: 0; font-family: system-ui, sans-serif; background: #fff; color: #111; }
+  main { max-width: 72rem; margin: 0 auto; padding: 4rem 1rem; }
+  h1 { font-size: clamp(1.5rem, 7vw, 4.5rem); line-height: 1.05; margin: 0 0 1.5rem; text-wrap: balance; }
+  h1 .line { display: block; }
+  h1 .word { opacity: 0; animation: in 0.3s ease-out forwards; }
+  h1 .line:nth-child(1) .word:nth-child(1) { animation-delay: 0.05s; }
+  h1 .line:nth-child(1) .word:nth-child(2) { animation-delay: 0.15s; }
+  h1 .line:nth-child(2) .word:nth-child(1) { animation-delay: 0.25s; }
+  h1 .line:nth-child(2) .word:nth-child(2) { animation-delay: 0.35s; }
+  h1 .line:nth-child(2) .word:nth-child(3) { animation-delay: 0.45s; }
+  @keyframes in { to { opacity: 1; } }
+  h2 { font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 500; color: #444; margin: 0; max-width: 32ch; }
+  @media (prefers-reduced-motion: reduce) { h1 .word { animation: none; opacity: 1; } }
+</style>
+</head>
+<body>
+<main>
+  <!-- A made-up hero for trying the tools. Each .line is a designed line
+       that must render as one row; each .word is revealed by the
+       entrance animation. -->
+  <h1>
+    <span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Know a build is safe before your users do.</span>
+    <span aria-hidden="true">
+      <span class="line"><span class="word">Know a build </span><span class="word">is safe</span></span>
+      <span class="line"><span class="word">before </span><span class="word">your users </span><span class="word">do.</span></span>
+    </span>
+  </h1>
+  <h2>Release checks for mobile teams.</h2>
+</main>
+</body>
+</html>

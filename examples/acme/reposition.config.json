@@ -1,0 +1,18 @@
+{
+  "kernel": {
+    "file": "src/site.ts",
+    "brandLine": "SITE_BRAND_LINE",
+    "outcomeLine": "SITE_OUTCOME_LINE"
+  },
+  "decisionRecord": "positioning.md",
+  "sweepPaths": ["src", "site", "positioning.md"],
+  "url": "site/index.html",
+  "widths": [360, 768, 1440, 1728],
+  "settleMs": 1200,
+  "hero": {
+    "headline": "h1",
+    "maxRows": 2,
+    "lines": "h1 .line",
+    "reveal": "h1 .word"
+  }
+}

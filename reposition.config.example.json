@@ -1,0 +1,19 @@
+{
+  "kernel": {
+    "file": "src/lib/site.ts",
+    "brandLine": "SITE_BRAND_LINE",
+    "outcomeLine": "SITE_OUTCOME_LINE"
+  },
+  "decisionRecord": "docs/positioning.md",
+  "sweepPaths": ["src", "public", "docs", "README.md"],
+  "url": "http://localhost:3000/",
+  "amdahl": "auto",
+  "widths": [360, 768, 1440, 1728],
+  "settleMs": 1500,
+  "hero": {
+    "headline": "h1",
+    "maxRows": 3,
+    "lines": "",
+    "reveal": ""
+  }
+}
