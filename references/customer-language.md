@@ -23,9 +23,23 @@ quoted buyer language is a transcript, not positioning.
 
 If the only source is one person's summary, say so. Ask for the raw words.
 
-**Window the read to the last 120 days.** Positioning tracks how the market
-sounds now. Compute the cutoff once per run and apply it to every source.
-Widen it only when the human asks, and say so when you do.
+**Window the search to the last 120 days.** Positioning tracks how the
+market sounds now. Compute the cutoff once per run and apply it to every
+source you go looking for (an Amdahl search, a CRM query). Widen it only
+when the human asks, and say so when you do.
+
+**Files the person hands you are read in full**, whatever their dates: they
+chose them. Weigh older ones less and say which are older. If you leave any
+out, the Sources line names them, with how many won and lost deals they
+hold.
+
+**Our side is not a buyer.** Leave out internal meetings and calls held
+after the deal closed (an onboarding or kickoff) when you weigh why deals
+were won or lost. A line from our own team can still show what the team
+believes; label it "our side, not a buyer". Label every quote: company,
+role, date, deal stage, and where it came from ("call transcript",
+"AE notes", "via Amdahl"). An AE's summary of what a buyer meant is
+labelled "AE paraphrase", never quoted as the buyer's words.
 
 ## Steps
 
