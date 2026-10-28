@@ -17,11 +17,12 @@ person's input as evidence, not dictation. When two sources disagree, say so
 and propose the reading that the decision record and the buyer evidence
 support. Naming the conflict is part of the job.
 
-**Ask little, show early.** Before the first result, ask only two things,
-and only when they apply: the Amdahl setup offer (when Amdahl is not set
-up) and whether to go on when the checkout is behind. Everything else is a
-default you state in the result's Assumed line. The pick is the run's main
-question.
+**Ask little, show early.** Before the first result, ask only these, and
+only when they apply: the Amdahl setup offer (when Amdahl is not set up),
+whether a connected Amdahl workspace is this company's (when you cannot
+tell), and whether to go on when the checkout is behind. Everything else is
+a default you state in the result's Assumed line. The pick is the run's
+main question.
 
 ## Setup (first run in a repo)
 
@@ -35,11 +36,16 @@ yourself after Read first, and name it in the result's Assumed line.
    `references/config.md`.
 2. **The decision record** (the config's `decisionRecord`, for example
    `docs/positioning.md`). Start from `templates/positioning.md` in this
-   skill's folder. Fill in only what the person decides in this run: the
-   kernel they pick and the lines it retires. Leave the template's other
-   sections for the team; never fill them with your own calls. If the repo
-   already has a messaging or positioning doc, use it as the decision
-   record rather than writing a second one, and say so in the Assumed line.
+   skill's folder. Fill in the kernel the person picks (or the pick they
+   handed to you, marked "not yet reviewed by <name>"), the lines it
+   retires, and facts the run measured or found: the line budgets and the
+   coupled surfaces. Phrases you retired on your own go in as "(pending)"
+   (see the sweep). Leave rules, habits and the working loop for the team;
+   never fill them with your own calls. If the team already keeps a
+   messaging or positioning doc (not one person's notes: see Read first,
+   step 1), use it as the decision record rather than
+   writing a second one, and say so in the Assumed line. Append the record
+   sections below what is there; never edit someone else's sections.
 
 If the site has no single place that holds the brand line and outcome line,
 say so and offer to create one (a constants file the pages import). Until
@@ -48,7 +54,11 @@ the kernel lives in one place, every pivot is a hunt.
 ## Read first, always
 
 1. The decision record. It predicts the calls the team will make. Propose
-   nothing that a rule there already rejects.
+   nothing that a rule there already rejects. **One person's notes are not
+   the record.** A doc written by one person (a founder's notes, a sales
+   lead's pillars) whose rules cite no buyer evidence is an input: weigh its
+   rules against the evidence like any other voice, and when the pick goes
+   against one, say so on the result's Conflict line.
 2. The kernel file, and every constant that mirrors it.
 3. The input for THIS pivot, in whatever form it came. Extract what changed,
    what buyers confirmed, what was rejected, and by whom. If the input is
@@ -56,6 +66,17 @@ the kernel lives in one place, every pivot is a hunt.
    Sources line, and mark each claim that rests on that one voice. A kernel
    built on one person's phrasing is the failure this skill exists to
    prevent.
+   - **The evidence floor.** Count the buyers whose own words you have:
+     not your team, and not someone's summary of what a buyer meant.
+     Fewer than three, or only summaries: start the result with "Thin
+     evidence:" and what would fix it (the recordings, the loss emails, a
+     few more calls). Draft anyway, but do not apply, even when the request
+     says to apply your pick: ask first. If they say go, mark the kernel
+     "provisional" in the decision record, with the reason.
+   - **Files the person hands you are read in full.** The 120-day window
+     (`references/customer-language.md`) is for sources you go looking
+     for. If you leave out part of what they gave you, the Sources line
+     names it, with how many won and lost deals it holds.
 4. Where the pivot already is: recent commits, open branches, the latest
    messages. A run often starts in the middle (kernel already changed), and
    then the job is the sweep and the checks, not a redraft.
@@ -147,7 +168,11 @@ kernel evolves, with the reasons, is in `examples/acme/positioning.md`.
 2. **Measure at size before proposing.** Headline length is a budget, not a
    feeling. Run `tools/measure.mjs` against the dev server: it puts each
    candidate into the live headline and counts the real lines at each width,
-   without editing a file. Never eyeball.
+   without editing a file. Never eyeball. When the hero is built from
+   designed lines (`hero.lines` in the config), pass each candidate split
+   the way it ships, `"First line|second line."`: a line marked WRAPS
+   fails, whatever the total says. Measure the subhead with
+   `--selector=<its selector>`.
 3. **Check the finalists against the evidence** (draft mode). For each
    claim the finalist pairs make, show the buyer quotes that support it,
    the quotes that contradict it, or "no buyer evidence in the window".
@@ -158,9 +183,10 @@ kernel evolves, with the reasons, is in `examples/acme/positioning.md`.
    Nothing is judged from a diff. The human decides; the skill proposes.
 5. **Record what each decision taught** in the decision record, only when it
    teaches: a new rule, a rule that stopped being true, an overrule with its
-   reason. Never a changelog. **Record only what a person decided.** A call
-   you made on your own (a new rule, a phrase added to "deliberately not
-   retired") goes in your hand-back as a question, not in the record.
+   reason. Never a changelog. **Record only what a person decided**, plus
+   the measured facts and "(pending)" phrases Setup allows. A call you made
+   on your own (a new rule, a phrase added to "deliberately not retired")
+   goes in your hand-back as a question, not in the record.
 
 ## The result: one screen
 
@@ -171,7 +197,11 @@ After a draft:
 
 - **Pick:** the pair, and its rows at each width.
 - **Why:** one sentence.
-- **Runner-up:** the pair, its rows, and why not.
+- **Runner-up:** the pair, its rows, and why not. A line a stakeholder
+  asked for goes here (or on the Conflict line), measured like the rest.
+- **Conflict:** each rule or line from a person that the pick goes against:
+  whose, what it says, and the evidence either way. "None" when there is
+  none.
 - **Evidence:** per claim, the quotes for and against (as in check mode).
 - **Sources:** where the quotes came from, and any gap (one voice, no
   Amdahl).
@@ -196,7 +226,11 @@ run it:
 
 1. **Append the outgoing brand and outcome lines to the retired-lines list
    in the same pass.** That list is the sweep's grep list. The append is the
-   guard.
+   guard. The old story is rarely only those two lines: a category noun or
+   a tagline on an inner page carries it too. Each such phrase you rewrite
+   goes on the "Retired category nouns" list marked "(pending)", so the
+   next sweep greps it as well. Ask about each pending entry in Your call;
+   only a person removes the mark or the entry.
 2. **Grep every `sweepPaths` folder for each retired line, and read every
    hit.** A dead sentence in a constant, a meta tag or page copy is drift.
    Check the "deliberately not retired" list before you flag anything.

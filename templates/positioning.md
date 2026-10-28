@@ -91,9 +91,11 @@ SENTENCE reappearing is drift. A shared word is not: read the context.
 
 ### Retired category nouns
 
-A hit needs a human read, never an automatic flag:
+A hit needs a human read, never an automatic flag. An entry the skill added
+on its own is marked "(pending)" until a person keeps or removes it:
 
 - <noun>: <where it is dead, where it is still fine>
+- <noun> (pending): <the page it was rewritten on, and when>
 
 ### Deliberately NOT retired
 

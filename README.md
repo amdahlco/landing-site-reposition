@@ -88,11 +88,13 @@ each candidate, never a score. To turn it off, set `"amdahl": "off"` in
 ```bash
 cd ~/.claude/skills/reposition
 node tools/verify-hero.mjs --config=examples/acme/reposition.config.json
-node tools/measure.mjs --config=examples/acme/reposition.config.json "Know a build is safe before your users do."
+node tools/measure.mjs --config=examples/acme/reposition.config.json "Know a build|is safe before your users do."
 ```
 
 The first prints `OK` for each engine and width, then `ALL OK`. The second prints how
-many lines the candidate takes at each width.
+many lines the candidate takes at each width. The example's headline is built from two
+designed lines, so the candidate is split with `|` the way it ships, and the tool counts
+each line on its own.
 
 ## What is in here
 

@@ -11,7 +11,8 @@ changes, this is the only file to edit.
 
 **The skill works without Amdahl.** Never block a run on it, and never ask
 about it twice in one run. When the config says `"amdahl": "off"`, skip
-this file entirely: do not check, offer, call or mention Amdahl.
+this file entirely: do not check, offer, call or mention Amdahl. (The run
+that writes `"off"` names it once, in the Assumed line.)
 
 If another Amdahl skill in this session gives different advice for site
 copy (for example, to grade it), this file wins.
@@ -28,7 +29,28 @@ status and the data overview are reads that are not metered.
 | B. Installed, no tools | No `search_customers` tool, but `claude mcp list` shows an `amdahl` server (never run `claude mcp get`: it can print a key). The person is signed out, or has no Amdahl account yet (sign-in gives no token without one, so the tools never load). | Ask what `/mcp` or the sign-in page shows. Signed out: give section 2, step 2. A waitlist page, "Join the beta", "Create a workspace first" or "Company email needed": say in one line that they have no Amdahl account yet, and offer nothing more. Continue with their own sources. |
 | C. Nothing connected | `get_setup_status` shows `connections.total` is 0. | Do not search (it would come back empty). Help them connect a source (section 2, step 4). Continue with their own sources. |
 | D. Connected, no data yet | The `search-overview://current` resource shows 0 rows for `interactions`. If it shows null, read it once more first. If `get_setup_status` has `connections.omitted` instead of a total, Amdahl could not report connections: go straight to this overview check. | Say the first sync has not finished, and to run again later. Continue with their own sources. |
-| E. Ready | Rows exist. | Use Amdahl first in the buyer-language pass (section 3). |
+| E. Ready | Rows exist, and the workspace is this company's (below). | Use Amdahl first in the buyer-language pass (section 3). |
+
+**Check whose workspace it is before any search.** A connected Amdahl
+belongs to whoever signed in, and that can be another company: an agency,
+a consultant, a second client in the same Claude Code. Its calls would
+then pass for this company's buyers. In states C, D and E, read
+`workspace.name`, `workspace.slug` and the domain of `caller.email` from
+`get_setup_status`, and compare them with the company this site is for
+(the site's name and domain in the kernel file, the config `url`, or the
+request).
+
+- They plainly match: go on.
+- They plainly differ, or you cannot tell: ask once, before the first
+  search: "Amdahl is connected to the <workspace.name> workspace. Is that
+  this company's?" Until they say yes, search nothing and continue with
+  their own sources.
+- They say no: treat it as not set up, and make no setup offer this run.
+
+**A no that came first counts.** If the person already said they do not
+use Amdahl (in this request, or earlier in the conversation), make no
+setup offer. On a first run, write `"amdahl": "off"` into the config you
+create, and name it in the result's Assumed line.
 
 If a call comes back with `setup_needed`, show its `message` and its link
 as they are, and use the person's own sources. Do not retry.
@@ -48,8 +70,9 @@ person knows what an MCP server is.
 > Amdahl keeps a synced copy of them. Want to set it up? I will walk you
 > through each step. Or I can continue with notes you give me.
 
-If they say no, continue, and say once that you can set `"amdahl": "off"`
-in `reposition.config.json` so you stop asking.
+If they say no, continue, and set `"amdahl": "off"` in
+`reposition.config.json` so the next run does not ask again. Say so once,
+in the result's Assumed line.
 
 If they say yes, walk them through one step at a time, and wait for each
 step to finish before you give the next.
