@@ -60,7 +60,7 @@ them by hand. The skill works without it.
 You do not need to set it up first. On the first draft run, the skill
 checks for Amdahl and offers to walk you through setup, step by step:
 
-1. Add Amdahl to Claude Code, from your site's repo (needs Node.js 20 or
+1. Add Amdahl to Claude Code, from your site's repo (needs Node.js 22 or
    newer). This also adds an Amdahl skill to all your projects:
 
    ```bash
