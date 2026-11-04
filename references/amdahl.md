@@ -77,7 +77,7 @@ in the result's Assumed line.
 If they say yes, walk them through one step at a time, and wait for each
 step to finish before you give the next.
 
-1. **Add Amdahl to Claude Code.** This needs Node.js 20 or newer. Tell
+1. **Add Amdahl to Claude Code.** This needs Node.js 22 or newer. Tell
    them what it does first: it adds Amdahl's server and an Amdahl skill
    to Claude Code for all their projects. Their yes to
    setup covers running it; Claude Code asks them to approve the command.
