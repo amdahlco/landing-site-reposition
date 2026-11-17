@@ -23,13 +23,28 @@ a browser can open.
 
 ## Install
 
-You need Claude Code. The two checking tools also need Node 18 or newer.
+You need Claude Code. The two checking tools and the one-command install
+also need Node 22 or newer, with npm.
 
-1. Clone this repo into your skills folder:
+The skill name is `reposition`. This repo has a different name, so put the
+skill in a folder named `reposition`.
 
-   ```bash
-   git clone https://github.com/amdahlco/landing-site-reposition.git ~/.claude/skills/reposition
-   ```
+1. Add the skill, whichever way suits you:
+
+   - **One command.** It downloads the skill from
+     [amdahl.ai/skills/amdahl/reposition](https://amdahl.ai/skills/amdahl/reposition),
+     checks it against the checksum amdahl.ai lists, and puts it in
+     `~/.claude/skills/reposition`, for every project.
+
+     ```bash
+     npx amdahl skills add amdahl/reposition -g
+     ```
+
+   - **Git.** Clone this repo into your Claude Code skills folder:
+
+     ```bash
+     git clone https://github.com/amdahlco/landing-site-reposition.git ~/.claude/skills/reposition
+     ```
 
 2. Set up the tools, once per machine:
 
@@ -48,7 +63,8 @@ You need Claude Code. The two checking tools also need Node 18 or newer.
    full run, the skill writes two files in your repo:
    `reposition.config.json` and a decision record.
 
-To update later: `git -C ~/.claude/skills/reposition pull`.
+To update later, run the same `npx` command with `--force`. For a clone, run
+`git -C ~/.claude/skills/reposition pull`.
 
 ## Amdahl (optional)
 
